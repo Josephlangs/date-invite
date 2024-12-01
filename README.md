@@ -3,46 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Date Request</title>
+    <title>Date Invitation</title>
     <style>
         body {
             font-family: 'Comic Sans MS', sans-serif;
+            background-color: #ffebf7;
             margin: 0;
             padding: 0;
-            background-color: #ffe6f7;
-            color: #333;
+            color: #444;
         }
         .container {
-            max-width: 500px;
-            margin: 50px auto;
+            max-width: 600px;
+            margin: 30px auto;
             padding: 20px;
-            background-color: #fff;
+            background: #fff;
             border-radius: 15px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
             text-align: center;
         }
         h1 {
+            font-size: 24px;
             color: #ff66cc;
+            margin-bottom: 10px;
         }
-        form label {
+        p {
+            font-size: 16px;
+            color: #777;
+        }
+        form {
+            margin-top: 20px;
+        }
+        label {
+            font-weight: bold;
             display: block;
             margin: 15px 0 5px;
-            font-weight: bold;
         }
-        select, input, button {
+        select, input, textarea, button {
             width: 90%;
             padding: 10px;
             margin-bottom: 15px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
             font-size: 14px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        select, textarea {
+            resize: none;
         }
         button {
             background-color: #ff66cc;
             color: white;
             border: none;
-            cursor: pointer;
             font-size: 16px;
+            cursor: pointer;
         }
         button:hover {
             background-color: #e055aa;
@@ -51,48 +63,47 @@
 </head>
 <body>
     <div class="container">
-        <h1>🌸 Date Invitation 🌸</h1>
-        <p>Would you go on a date with me? 😊</p>
+        <h1>💖 Would You Go On a Date with Me? 💖</h1>
+        <p>Please fill out the form below to plan our perfect day! 🥰</p>
         <form action="submit_date.php" method="POST">
             <!-- Date and Time -->
-            <label for="date">Date and Time You're Free</label>
+            <label for="date">When Are You Free?</label>
             <input type="datetime-local" id="date" name="date" required>
 
             <!-- Places to Go -->
-            <label for="places">Where Do You Want to Go?</label>
+            <label for="places">Where Would You Like to Go?</label>
             <select id="places" name="places" required>
-                <option value="" disabled selected>Choose a place...</option>
-                <option value="SM">SM Mall</option>
-                <option value="Manila">Manila City</option>
-                <option value="Park">Parks</option>
+                <option value="" disabled selected>Select a place...</option>
+                <option value="SM San Pablo">SM San Pablo</option>
+                <option value="SM Calamba">SM Calamba</option>
+                <option value="SM Mall of Asia">SM Mall of Asia</option>
+                <option value="Museums in SM Sta. Rosa">Museums in SM Sta. Rosa</option>
                 <option value="Enchanted Kingdom">Enchanted Kingdom</option>
-                <option value="Beach">Beach</option>
+                <option value="Venice Grand Canal, Taguig">Venice Grand Canal, Taguig</option>
+                <option value="Bonifacio Global City (BGC)">Bonifacio Global City (BGC)</option>
+                <option value="Parks in Manila">Parks in Manila</option>
+                <option value="Tagaytay City">Tagaytay City</option>
             </select>
 
-            <!-- Places to Eat -->
+            <!-- Restaurants -->
             <label for="restaurant">What Do You Want to Eat?</label>
             <select id="restaurant" name="restaurant" required>
-                <option value="" disabled selected>Choose a restaurant...</option>
+                <option value="" disabled selected>Select a restaurant...</option>
                 <option value="McDonald's">McDonald's</option>
                 <option value="KFC">KFC</option>
                 <option value="Jollibee">Jollibee</option>
                 <option value="Ramen">Ramen</option>
-                <option value="Bistro Charlemagne">Bistro Charlemagne</option>
+                <option value="Sangyupsal">Sangyupsal</option>
+                <option value="Fine Dining">Fine Dining</option>
+                <option value="Local Street Food">Local Street Food</option>
             </select>
 
-            <!-- Movies -->
-            <label for="movie">Which Movie Do You Want to Watch?</label>
-            <select id="movie" name="movie" required>
-                <option value="" disabled selected>Choose a movie...</option>
-                <option value="The Marvels">The Marvels</option>
-                <option value="Five Nights at Freddy's">Five Nights at Freddy's</option>
-                <option value="Wish">Wish</option>
-                <option value="Napoleon">Napoleon</option>
-                <option value="Wish Dragon">Wish Dragon</option>
-            </select>
+            <!-- Movie -->
+            <label for="movie">What Movie Do You Want to Watch?</label>
+            <textarea id="movie" name="movie" placeholder="Type the movie you'd like to see..." rows="2" required></textarea>
 
             <!-- Submit -->
-            <button type="submit">Submit 💖</button>
+            <button type="submit">Submit 💕</button>
         </form>
     </div>
 </body>
